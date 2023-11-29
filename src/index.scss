@@ -1,0 +1,28 @@
+.card-img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+}
+.skeleton {
+    position: relative;
+    overflow: hidden !important;
+    background-color: rgb(39 52 68 / 0.09) !important;
+    color: transparent !important;
+    & * {
+        color: transparent !important;
+    }
+    &.anime::after {
+        content: '';
+        position: absolute;
+        inset: 0px;
+        transform: translate(-100%);
+        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgb(0 0 0 / 8%) 20%, rgb(0 0 0 / 9%) 60%, rgba(0, 0, 0, 0));
+        animation: shimmer 2s infinite;
+    }
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
